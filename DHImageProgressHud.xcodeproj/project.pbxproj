@@ -30,6 +30,7 @@
 		D9F27DB119F3EC2B0049441E /* DHImageProgressHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHImageProgressHud.m; sourceTree = "<group>"; };
 		D9F27DB719F3EC2B0049441E /* DHImageProgressHudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DHImageProgressHudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F27DBA19F3EC2B0049441E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F27DC419F3EDAB0049441E /* DHImageProgressHud.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DHImageProgressHud.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 			children = (
 				D9F27DAF19F3EC2B0049441E /* DHImageProgressHud.h */,
 				D9F27DB119F3EC2B0049441E /* DHImageProgressHud.m */,
+				D9F27DC419F3EDAB0049441E /* DHImageProgressHud.bundle */,
 			);
 			path = DHImageProgressHud;
 			sourceTree = "<group>";
@@ -335,6 +337,7 @@
 				D9F27DBF19F3EC2B0049441E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9F27DC019F3EC2B0049441E /* Build configuration list for PBXNativeTarget "DHImageProgressHudTests" */ = {
 			isa = XCConfigurationList;
@@ -343,6 +346,7 @@
 				D9F27DC219F3EC2B0049441E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
