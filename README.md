@@ -1,6 +1,8 @@
 # DHImageProgressHud
 
-DHImageProgressHud is a clean and easy-to-use HUD meant to display the progress of an ongoing task.
+DHImageProgressHud is a easy to use Hud built on the same foundation as [SVProgressHUD](https://github.com/TransitApp/SVProgressHUD).
+Instead of displaying the standard spinner, DHImageProgressHud enable developers to simply
+plug a set of animation frames and loop through that as the loading view.
 
 <!--![SVProgressHUD](http://f.cl.ly/items/2G1F1Z0M0k0h2U3V1p39/SVProgressHUD.gif)-->
 
