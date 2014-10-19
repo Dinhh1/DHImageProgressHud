@@ -71,13 +71,15 @@ Or show a confirmation glyph before before getting dismissed 1 second later usin
 
 ## Setting your own Animation Images
 
-SVProgressHUD can be customized via the following methods:
-
+In order to load your images into DHImageProgressHud :
+    - All Image files must be named in sequential order and must be 5 digits (padded with 0's if necessary).
+    - example :coffee_00000.png, this represents the first frame of our animation
 ```objective-c
 + (void)setAnimationImagePrefix:(NSString *)imagePrefix numOfFrames:(NSInteger)frames;
 
 [DHImageProgressHud setAnimationImagePrefix:@"coffee" numOfFrames:3];
 ```
+
 
 ## Notifications
 
