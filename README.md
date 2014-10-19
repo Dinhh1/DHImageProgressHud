@@ -13,7 +13,6 @@ DHImageProgressHud is a clean and easy-to-use HUD meant to display the progress 
 
 ## Usage
 
-
 Example Use Case 
 
 ```objective-c
@@ -25,50 +24,6 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
     });
 });
 ```
-
-### Showing the HUD
-
-You can show the status of indeterminate tasks using one of the following:
-
-<!--```objective-c-->
-<!--+ (void)show;-->
-<!--+ (void)showWithMaskType:(SVProgressHUDMaskType)maskType;-->
-<!--+ (void)showWithStatus:(NSString*)string;-->
-<!--+ (void)showWithStatus:(NSString*)string maskType:(SVProgressHUDMaskType)maskType;-->
-<!--```-->
-
-If you'd like the HUD to reflect the progress of a task, use one of these:
-
-<!--```objective-c-->
-<!--+ (void)showProgress:(CGFloat)progress;-->
-<!--+ (void)showProgress:(CGFloat)progress status:(NSString*)status;-->
-<!--+ (void)showProgress:(CGFloat)progress status:(NSString*)status maskType:(SVProgressHUDMaskType)maskType;-->
-<!--```-->
-
-### Dismissing the HUD
-
-It can be dismissed right away using:
-
-<!--```objective-c-->
-<!--+ (void)dismiss;-->
-<!--```-->
-
-If you'd like to stack HUDs, you can balance out every show call using:
-
-<!--```objective-c-->
-<!--+ (void)popActivity;-->
-<!--```-->
-
-The HUD will get dismissed once the `popActivity` calls will match the number of show calls.  
-
-Or show a confirmation glyph before before getting dismissed 1 second later using:
-
-<!--```objective-c-->
-<!--+ (void)showSuccessWithStatus:(NSString*)string;-->
-<!--+ (void)showErrorWithStatus:(NSString *)string;-->
-<!--+ (void)showImage:(UIImage*)image status:(NSString*)string; // use 28x28 pngs-->
-<!--```-->
-
 ## Setting your own Animation Images
 
 In order to load your images into DHImageProgressHud :
@@ -82,14 +37,6 @@ All Image files must be named in sequential order and must be 5 digits (padded w
 [DHImageProgressHud setAnimationImagePrefix:@"coffee" numOfFrames:3];
 ```
 
-
-## Notifications
-
-<!--`SVProgressHUD` posts four notifications via `NSNotificationCenter` in response to being shown/dismissed:-->
-<!--* `SVProgressHUDWillAppearNotification` when the show animation starts-->
-<!--* `SVProgressHUDDidAppearNotification` when the show animation completes-->
-<!--* `SVProgressHUDWillDisappearNotification` when the dismiss animation starts-->
-<!--* `SVProgressHUDDidDisappearNotification` when the dismiss animation completes-->
 
 <!--Each notification passes a `userInfo` dictionary holding the HUD's status string (if any), retrievable via `SVProgressHUDStatusUserInfoKey`.-->
 
