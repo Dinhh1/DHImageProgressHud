@@ -69,18 +69,15 @@ Or show a confirmation glyph before before getting dismissed 1 second later usin
 <!--+ (void)showImage:(UIImage*)image status:(NSString*)string; // use 28x28 pngs-->
 <!--```-->
 
-## Customization
+## Setting your own Animation Images
 
 SVProgressHUD can be customized via the following methods:
 
-<!--```objective-c-->
-<!--+ (void)setBackgroundColor:(UIColor*)color; // default is [UIColor whiteColor]-->
-<!--+ (void)setForegroundColor:(UIColor*)color; // default is [UIColor blackColor]-->
-<!--+ (void)setRingThickness:(CGFloat)width; // default is 4 pt-->
-<!--+ (void)setFont:(UIFont*)font; // default is [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]-->
-<!--+ (void)setSuccessImage:(UIImage*)image; // default is bundled success image from Glyphish-->
-<!--+ (void)setErrorImage:(UIImage*)image; // default is bundled error image from Glyphish-->
-<!--```-->
+```objective-c
++ (void)setAnimationImagePrefix:(NSString *)imagePrefix numOfFrames:(NSInteger)frames;
+
+[DHImageProgressHud setAnimationImagePrefix:@"coffee" numOfFrames:3];
+```
 
 ## Notifications
 
