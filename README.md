@@ -28,9 +28,9 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
 In order to load your images into DHImageProgressHud :
 
-All Image files must be named in sequential order and must be 5 digits (padded with 0's if necessary).
+All Image files must be named in sequential order and must be 4 digits (padded with 0's if necessary).
 
- example :coffee_00000.png, this represents the first frame of our animation
+ example :coffee_0000.png, this represents the first frame of our animation
 ```objective-c
 + (void)setAnimationImagePrefix:(NSString *)imagePrefix numOfFrames:(NSInteger)frames;
 
