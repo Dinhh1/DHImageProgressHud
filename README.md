@@ -13,7 +13,6 @@ DHImageProgressHud is a clean and easy-to-use HUD meant to display the progress 
 
 ## Usage
 
-(see sample Xcode project in `/Demo`)
 
 Example Use Case 
 
@@ -96,4 +95,4 @@ SVProgressHUD can be customized via the following methods:
 <!--`DHImageProgressHud` also posts `SVProgressHUDDidReceiveTouchEventNotification` when users touch on the screen. For this notification `userInfo` is not passed but the object parameter contains the `UIEvent` that related to the touch.-->
 
 ## Credits
-DHImageProgressHud was inspired by Sam Vermette's [SVProgressHud](https://github.com/TransitApp/SVProgressHUD)
+DHImageProgressHud was inspired by Sam Vermette's [SVProgressHUD](https://github.com/TransitApp/SVProgressHUD)
