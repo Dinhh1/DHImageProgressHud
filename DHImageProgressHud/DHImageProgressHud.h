@@ -1,5 +1,5 @@
 //
-//  SVProgressHUD.h
+//  DHImageProgressHud
 //
 //  Created by Dinh Ho on 10/15/14.
 //  Copyright (c) 2014 Dinh Ho. All rights reserved.
@@ -27,9 +27,25 @@ typedef NS_ENUM(NSUInteger, DHImageProgressHudType) {
 @interface DHImageProgressHud : UIView
 
 #pragma mark - Customization
+/**
+ Sets the background color of the loading view
+ The default color is [UIColor whiteColor]
+ @param color: the color to set the background
+ */
++ (void)setBackgroundColor:(UIColor*)color;
 
-+ (void)setBackgroundColor:(UIColor*)color; // default is [UIColor whiteColor]
-+ (void)setForegroundColor:(UIColor*)color; // default is [UIColor blackColor]
+/**
+ Sets the foreground color of the loading view
+ The default color is [UIColor blacColor]
+ @param color: the color to set the foreground
+ */
++ (void)setForegroundColor:(UIColor*)color;
+
+/**
+ Sets the font for the the text string
+ The default font is [UIFont systemFont]
+ @param font: the desired font
+ */
 + (void)setFont:(UIFont*)font; // default is [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]
 + (void)setSuccessImage:(UIImage*)image; // default is bundled success image from Glyphish
 + (void)setErrorImage:(UIImage*)image; // default is bundled error image from Glyphish

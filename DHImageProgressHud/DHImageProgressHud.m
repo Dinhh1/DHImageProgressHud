@@ -70,105 +70,105 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
 
 @implementation DHImageProgressHud
 
-+ (DHImageProgressHud *)sharedView {
++ (DHImageProgressHud *)sharedInstance {
     static dispatch_once_t once;
-    static DHImageProgressHud *sharedView;
-    dispatch_once(&once, ^ { sharedView = [[self alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; });
-    return sharedView;
+    static DHImageProgressHud *instance;
+    dispatch_once(&once, ^ { instance = [[self alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; });
+    return instance;
 }
 
 #pragma mark - Setters
 
 + (void)setStatus:(NSString *)string {
-    [[self sharedView] setStatus:string];
+    [[self sharedInstance] setStatus:string];
 }
 
 + (void)setBackgroundColor:(UIColor *)color {
-    [self sharedView].hudView.backgroundColor = color;
+    [self sharedInstance].hudView.backgroundColor = color;
     DHImageProgressHudBackgroundColor = color;
 }
 
 + (void)setForegroundColor:(UIColor *)color {
-    [self sharedView];
+    [self sharedInstance];
     DHImageProgressHudForegroundColor = color;
 }
 
 + (void)setFont:(UIFont *)font {
-    [self sharedView];
+    [self sharedInstance];
     DHImageProgressHudFont = font;
 }
 
 + (void)setSuccessImage:(UIImage *)image {
-    [self sharedView];
+    [self sharedInstance];
     DHImageProgressHudSuccessImage = image;
 }
 
 + (void)setErrorImage:(UIImage *)image {
-    [self sharedView];
+    [self sharedInstance];
     DHImageProgressHudErrorImage = image;
 }
 
 + (void)setAnimationImagePrefix:(NSString *)imagePrefix withFPS:(NSInteger)fps
 {
-    [self sharedView];
+    [self sharedInstance];
     DHImageProgressHudAnimationPrefix = imagePrefix;
     DHImageProgressHudAnimationFPS = fps;
 }
 
 + (void)setProgressHudCustomMaskColor:(UIColor *)color
 {
-    [self sharedView];
+    [self sharedInstance];
     DHImageProgressHudCustomColor = color;
 }
 
 #pragma mark - Show Methods
 
 + (void)show {
-    [[self sharedView] showWithstatus:nil maskType:DHImageProgressHudTypeNone];
+    [[self sharedInstance] showWithstatus:nil maskType:DHImageProgressHudTypeNone];
 }
 
 + (void)showWithStatus:(NSString *)status {
-    [[self sharedView] showWithstatus:status maskType:DHImageProgressHudTypeNone];
+    [[self sharedInstance] showWithstatus:status maskType:DHImageProgressHudTypeNone];
 }
 
 + (void)showWithMaskType:(DHImageProgressHudType)maskType {
-    [[self sharedView] showWithstatus:nil maskType:maskType];
+    [[self sharedInstance] showWithstatus:nil maskType:maskType];
 }
 
 + (void)showWithStatus:(NSString*)status maskType:(DHImageProgressHudType)maskType {
-    [[self sharedView] showWithstatus:status maskType:maskType];
+    [[self sharedInstance] showWithstatus:status maskType:maskType];
 }
 
 
 #pragma mark - Show then dismiss methods
 
 + (void)showSuccessWithStatus:(NSString *)string {
-    [self sharedView];
+    [self sharedInstance];
     [self showImage:DHImageProgressHudSuccessImage status:string];
 }
 
 + (void)showErrorWithStatus:(NSString *)string {
-    [self sharedView];
+    [self sharedInstance];
     [self showImage:DHImageProgressHudErrorImage status:string];
 }
 
 + (void)showImage:(UIImage *)image status:(NSString *)string {
-    NSTimeInterval displayInterval = [[DHImageProgressHud sharedView] displayDurationForString:string];
-    [[self sharedView] showImage:image status:string duration:displayInterval];
+    NSTimeInterval displayInterval = [[DHImageProgressHud sharedInstance] displayDurationForString:string];
+    [[self sharedInstance] showImage:image status:string duration:displayInterval];
 }
 
 
 #pragma mark - Dismiss Methods
 
 + (void)popActivity {
-    [self sharedView].activityCount--;
-    if([self sharedView].activityCount == 0)
-        [[self sharedView] dismiss];
+    [self sharedInstance].activityCount--;
+    if([self sharedInstance].activityCount == 0)
+        [[self sharedInstance] dismiss];
 }
 
 + (void)dismiss {
     if ([self isVisible]) {
-        [[self sharedView] dismiss];
+        [[self sharedInstance] dismiss];
     }
 }
 
@@ -176,7 +176,7 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
 #pragma mark - Offset
 
 + (void)setOffsetFromCenter:(UIOffset)offset {
-    [self sharedView].offsetFromCenter = offset;
+    [self sharedInstance].offsetFromCenter = offset;
 }
 
 + (void)resetOffsetFromCenter {
@@ -715,7 +715,7 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
 #pragma mark - Utilities
 
 + (BOOL)isVisible {
-    return ([self sharedView].alpha == 1);
+    return ([self sharedInstance].alpha == 1);
 }
 
 
