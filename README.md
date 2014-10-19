@@ -7,7 +7,7 @@ DHImageProgressHud is a clean and easy-to-use HUD meant to display the progress 
 ## Installation
 
 ### Manual Installation
-* Sorry cocoapods not available yet. I'm still in the middle of getting things togehter.
+* Sorry cocoapods not available yet. I'm still in the middle of getting things together.
 * Drag the `DHImageProgressHud/DHImageProgressHud` folder into your project.
 * Add the **QuartzCore** framework to your project.
 
@@ -43,4 +43,4 @@ All Image files must be named in sequential order and must be 5 digits (padded w
 <!--`DHImageProgressHud` also posts `SVProgressHUDDidReceiveTouchEventNotification` when users touch on the screen. For this notification `userInfo` is not passed but the object parameter contains the `UIEvent` that related to the touch.-->
 
 ## Credits
-DHImageProgressHud was inspired by Sam Vermette's [SVProgressHUD](https://github.com/TransitApp/SVProgressHUD)
+DHImageProgressHud was inspired by and built on top of Sam Vermette's [SVProgressHUD](https://github.com/TransitApp/SVProgressHUD)
