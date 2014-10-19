@@ -221,6 +221,8 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
     return self;
 }
 
+#pragma mark - Overriden Method
+
 - (void)drawRect:(CGRect)rect {
     
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -341,6 +343,7 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
     
     [CATransaction commit];
 }
+
 
 - (void)setStatus:(NSString *)string {
     
@@ -678,15 +681,16 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
         int count = 0;
         do
         {
-            NSString* formatString = [NSString stringWithFormat:@"%@_%05d.png", DHImageProgressHudAnimationPrefix, count];
+            // as of right now every image must be accompanied with an image that has the format name_xxxx.png where x are in [0-9
+            NSString* formatString = [NSString stringWithFormat:@"%@_%04d.png", DHImageProgressHudAnimationPrefix, count];
             NSString* imageName = [NSString stringWithFormat:formatString, count];
             image = [UIImage imageNamed:imageName];
-            if(image != NULL)
+            if(image)
             {
                 [images addObject:image];
             }
             count++;
-        } while (image != NULL);
+        } while (image);
         
         if(images.count > 0)
         {
