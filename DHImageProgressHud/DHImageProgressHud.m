@@ -3,6 +3,10 @@
 //
 //  Created by Dinh Ho on 10/15/14.
 //  Copyright (c) 2014 Dinh Ho. All rights reserved.
+
+// GITHUB: https://github.com/Dinhh1/DHImageProgressHud
+
+// DHImageProgressHud was adapted from SVProgressHud originally developed by Sam Vermette https://github.com/TransitApp/SVProgressHUD
 //
 
 #if !__has_feature(objc_arc)
@@ -108,11 +112,11 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
     DHImageProgressHudErrorImage = image;
 }
 
-+ (void)setAnimationImagePrefix:(NSString *)imagePrefix withFPS:(NSInteger)fps
++ (void)setAnimationImagePrefix:(NSString *)imagePrefix numOfFrames:(NSInteger)frames
 {
     [self sharedInstance];
     DHImageProgressHudAnimationPrefix = imagePrefix;
-    DHImageProgressHudAnimationFPS = fps;
+    DHImageProgressHudAnimationFPS = frames;
 }
 
 + (void)setProgressHudCustomMaskColor:(UIColor *)color
@@ -183,7 +187,7 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
     [self setOffsetFromCenter:UIOffsetZero];
 }
 
-#pragma mark - Instance Methods
+#pragma mark - Object Lifecycle
 
 - (id)initWithFrame:(CGRect)frame {
     

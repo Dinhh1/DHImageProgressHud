@@ -1,9 +1,14 @@
 //
-//  DHImageProgressHud
+//  DHImageProgressHud.h
 //
 //  Created by Dinh Ho on 10/15/14.
 //  Copyright (c) 2014 Dinh Ho. All rights reserved.
+
+// GITHUB: https://github.com/Dinhh1/DHImageProgressHud
+
+// DHImageProgressHud was adapted from SVProgressHud originally developed by Sam Vermette https://github.com/TransitApp/SVProgressHUD
 //
+
 
 #import <UIKit/UIKit.h>
 #import <AvailabilityMacros.h>
@@ -49,7 +54,7 @@ typedef NS_ENUM(NSUInteger, DHImageProgressHudType) {
 + (void)setFont:(UIFont*)font; // default is [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]
 + (void)setSuccessImage:(UIImage*)image; // default is bundled success image from Glyphish
 + (void)setErrorImage:(UIImage*)image; // default is bundled error image from Glyphish
-+ (void)setAnimationImagePrefix:(NSString *)imagePrefix withFPS:(NSInteger)fps;
++ (void)setAnimationImagePrefix:(NSString *)imagePrefix numOfFrames:(NSInteger)frames;
 + (void)setProgressHudCustomMaskColor:(UIColor *)color; // default is [UIColor clearColor];
 
 #pragma mark - Show Methods
