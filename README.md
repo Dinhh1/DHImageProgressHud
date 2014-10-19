@@ -6,8 +6,8 @@ DHImageProgressHud is a clean and easy-to-use HUD meant to display the progress 
 
 ## Installation
 
-### Manually
-
+### Manual Installation
+* Sorry cocoapods not available yet. I'm still in the middle of getting things togehter.
 * Drag the `DHImageProgressHud/DHImageProgressHud` folder into your project.
 * Add the **QuartzCore** framework to your project.
 
