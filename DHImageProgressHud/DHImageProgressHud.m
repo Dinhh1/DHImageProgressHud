@@ -191,7 +191,8 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
 
 - (id)initWithFrame:(CGRect)frame {
     
-    if ((self = [super initWithFrame:frame])) {
+    if ((self = [super initWithFrame:frame]))
+    {
         self.userInteractionEnabled = NO;
         self.backgroundColor = [UIColor clearColor];
         self.alpha = 0;
@@ -200,9 +201,11 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
         
         DHImageProgressHudBackgroundColor = [UIColor whiteColor];
         DHImageProgressHudForegroundColor = [UIColor blackColor];
-        if ([UIFont respondsToSelector:@selector(preferredFontForTextStyle:)]) {
+        if ([UIFont respondsToSelector:@selector(preferredFontForTextStyle:)])
+        {
             DHImageProgressHudFont = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-        } else {
+        } else
+        {
             DHImageProgressHudFont = [UIFont systemFontOfSize:14.0];
             DHImageProgressHudBackgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
             DHImageProgressHudForegroundColor = [UIColor whiteColor];
@@ -210,7 +213,8 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
         if ([[UIImage class] instancesRespondToSelector:@selector(imageWithRenderingMode:)]) {
             DHImageProgressHudSuccessImage = [[UIImage imageNamed:@"DHImageProgressHud.bundle/success"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
             DHImageProgressHudErrorImage = [[UIImage imageNamed:@"DHImageProgressHud.bundle/error"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        } else {
+        } else
+        {
             DHImageProgressHudSuccessImage = [UIImage imageNamed:@"DHImageProgressHud.bundle/success"];
             DHImageProgressHudErrorImage = [UIImage imageNamed:@"DHImageProgressHud.bundle/error"];
         }
@@ -673,11 +677,13 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
 
 #pragma mark - Ring progress animation
 
+#define kAnimationDuration .5f
+
 - (UIImageView *)indefiniteAnimatedView {
     if (!_indefiniteAnimatedView)
     {
         NSMutableArray* images = [[NSMutableArray alloc] init];
-        UIImage* image = NULL;
+        UIImage* image = nil;
         int count = 0;
         do
         {
@@ -702,7 +708,10 @@ static const CGFloat DHImageProgressHudParallaxDepthPoints = 10;
             CGPoint center = CGPointMake(CGRectGetWidth(_hudView.frame)/2, CGRectGetHeight(_hudView.frame)/2);
             _indefiniteAnimatedView.center = center;
             //start animation
-            _indefiniteAnimatedView.animationDuration = _indefiniteAnimatedView.animationImages.count/ DHImageProgressHudAnimationFPS;
+            //TODO::
+            // still working on a sweet spot for this animation frame
+            // as of right now, simply set the duration to half a second
+            _indefiniteAnimatedView.animationDuration = kAnimationDuration;//(_indefiniteAnimatedView.animationImages.count/ DHImageProgressHudAnimationFPS);
             _indefiniteAnimatedView.animationRepeatCount = 0;
             [_indefiniteAnimatedView startAnimating];
             
